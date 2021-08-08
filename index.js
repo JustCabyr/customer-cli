@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
+const customer = require('./models/customer');
 
 // Map global promise - get rid of warning
 mongoose.Promise = global.Promise;
 
 // Connect to DB
 const db = mongoose.connect('mongodb://localhost:27017/customercli', {
-    useMongoclient: true
+    useNewUrlParser: true, useUnifiedTopology: true
 });
 
 // Import model
@@ -31,8 +32,39 @@ const findCustomer = (name) => {
     });
 }
 
+// Update Customer
+const updateCustomer = (_id, customer) => {
+    Customer.update({_id}, customer)
+        .then(customer => {
+            console.info('Customer Updated');
+            db.close();
+        });
+}
+
+// Remove Customer
+const removeCustomer = (_id) => {
+    Customer.deleteOne({_id})
+        .then(customer => {
+            console.info('Customer Removed');
+            db.close();
+        });
+}
+
+// List Customers
+const listCustomers = () => {
+    Customer.find()
+        .then(customers => {
+            console.info(customers);
+            console.info(`${customers.length} customers`);
+            db.close();
+        })
+}
+
 // Export All Methods
 module.exports = {
     addCustomer,
-    findCustomer
+    findCustomer,
+    updateCustomer,
+    removeCustomer,
+    listCustomers
 }
