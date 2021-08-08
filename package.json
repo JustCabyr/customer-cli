@@ -1,0 +1,24 @@
+{
+  "name": "customer-cli",
+  "version": "1.0.0",
+  "description": "Customer Management CLI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JustCabyr/customer-cli.git"
+  },
+  "author": "AbdulKabir Sulaiman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JustCabyr/customer-cli/issues"
+  },
+  "homepage": "https://github.com/JustCabyr/customer-cli#readme",
+  "dependencies": {
+    "commander": "^8.1.0",
+    "inquirer": "^8.1.2",
+    "mongoose": "^5.13.5"
+  }
+}
