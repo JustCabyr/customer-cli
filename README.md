@@ -1,1 +1,1 @@
-# customer-cli
+Complete Customer management CLI application with Node.js and MongoDB. Three different Node modules were used Mongoose, Commander.js and Inquirer. Works cross-platform; Windows/Linux/Mac.
